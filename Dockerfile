@@ -1,20 +1,15 @@
-FROM docker:20.10.16-dind
+FROM n8nio/n8n:latest
 
-WORKDIR /app
+USER root
 
-# Install dependencies
+# Install additional dependencies if needed
 RUN apk add --no-cache \
-    curl \
-    bash \
-    nodejs \
-    npm \
-    docker-compose
+    python3 \
+    py3-pip \
+    && pip3 install --no-cache-dir requests
 
-# Copy project files
-COPY . .
+USER node
 
-# Expose ports
-EXPOSE 5678 8000 11434
+EXPOSE 5678
 
-# Start command
-CMD ["docker-compose", "up", "-d"]
+CMD ["n8n", "start"]
