@@ -1,0 +1,15 @@
+{
+  "name": "railway-n8n-supabase-ollama",
+  "version": "1.0.0",
+  "description": "Multi-service Docker configuration for deploying n8n, Supabase, and Ollama on Railway",
+  "scripts": {
+    "railway:login": "npx railway login",
+    "railway:init": "npx railway init",
+    "railway:up": "npx railway up",
+    "railway:status": "npx railway status",
+    "railway:logs": "npx railway logs"
+  },
+  "devDependencies": {
+    "@railway/cli": "^4.5.1"
+  }
+}
