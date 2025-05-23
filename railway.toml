@@ -1,6 +1,6 @@
 [build]
-builder = "nixpacks"
-buildCommand = "echo 'Building multi-service setup'"
+builder = "dockerfile"
+dockerfilePath = "Dockerfile"
 
 [deploy]
 startCommand = "docker-compose up -d"
