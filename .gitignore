@@ -1,0 +1,26 @@
+# Environment variables
+.env
+
+# Data directories
+n8n-data/
+ollama-data/
+supabase/volumes/db/data/
+supabase/volumes/storage/
+
+# Logs
+*.log
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo

@@ -1,0 +1,71 @@
+_format_version: "2.1"
+_transform: true
+
+services:
+  - name: auth-v1
+    url: http://supabase-auth:9999/verify
+    routes:
+      - name: auth-v1-route
+        paths:
+          - /auth/v1/verify
+    plugins:
+      - name: cors
+  - name: auth-v1-token
+    url: http://supabase-auth:9999/token
+    routes:
+      - name: auth-v1-token-route
+        paths:
+          - /auth/v1/token
+    plugins:
+      - name: cors
+  - name: auth-v1-logout
+    url: http://supabase-auth:9999/logout
+    routes:
+      - name: auth-v1-logout-route
+        paths:
+          - /auth/v1/logout
+    plugins:
+      - name: cors
+  - name: auth-v1-user
+    url: http://supabase-auth:9999/user
+    routes:
+      - name: auth-v1-user-route
+        paths:
+          - /auth/v1/user
+    plugins:
+      - name: cors
+  - name: rest-v1
+    url: http://supabase-rest:3000
+    routes:
+      - name: rest-v1-route
+        paths:
+          - /rest/v1
+    plugins:
+      - name: cors
+
+plugins:
+  - name: cors
+    config:
+      origins:
+        - "*"
+      methods:
+        - GET
+        - POST
+        - PUT
+        - PATCH
+        - DELETE
+        - OPTIONS
+      headers:
+        - Accept
+        - Accept-Version
+        - Content-Length
+        - Content-MD5
+        - Content-Type
+        - Date
+        - X-Auth-Token
+        - Authorization
+      exposed_headers:
+        - X-Auth-Token
+      credentials: true
+      max_age: 3600
+      preflight_continue: false

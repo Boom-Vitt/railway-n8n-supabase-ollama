@@ -1,0 +1,14 @@
+[build]
+builder = "docker"
+dockerfilePath = "docker-compose.yml"
+
+[deploy]
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
+
+[[services]]
+name = "supabase"
+internal_port = 8000
+routes = [
+  { type = "http", path = "/" }
+]
