@@ -1,0 +1,13 @@
+[build]
+builder = "nixpacks"
+buildCommand = "echo 'Building multi-service setup'"
+
+[deploy]
+startCommand = "docker-compose up -d"
+healthcheckPath = "/"
+healthcheckTimeout = 100
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 10
+
+[[services]]
+name = "railway-n8n-supabase-ollama"

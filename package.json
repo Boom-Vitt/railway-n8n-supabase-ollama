@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Multi-service Docker configuration for deploying n8n, Supabase, and Ollama on Railway",
   "scripts": {
+    "start": "docker-compose up",
     "railway:login": "npx railway login",
     "railway:init": "npx railway init",
     "railway:up": "npx railway up",
